@@ -1,4 +1,4 @@
-Install Deis Workflow on to GKE without fuss 
+Install Deis Workflow PaaS on to GKE without fuss 
 ========================
 
 It allows to install [Deis Workflow PaaS](https://deis.com/workflow/) on to GKE with persistent [Object Storage](https://deis.com/docs/workflow/installing-workflow/configuring-object-storage/) set to Google Cloud Storage and Registry to [gcr.io](https://cloud.google.com/container-registry/)
