@@ -29,6 +29,31 @@ You will be able:
 - helmc - fetches the latest [Helm Classic](https://github.com/helm/helm-classic) cli
 - cluster - shows cluster GKE name
 
+What the install will do:
+
+- Download lastest `helmc` cli version 
+- Download lastest `deis` cli version 
+- Add Deis Chart repository
+- Fetch latest Workflow chart
+- Set storage to GCS
+- Set Registry to grc.io
+- Generate chart
+- Install Workflow
+- Show `deis-router` external IP
+
+What the upgrade will do:
+
+- Download lastest `helmc` cli version 
+- Download lastest `deis` cli version 
+- Fetch latest Workflow chart
+- Fetch current database credentials
+- Fetch builder component ssh keys
+- Set storage to GCS
+- Set Registry to grc.io
+- Generate chart for the new release
+- Uninstall Workflow
+- Install Workflow
+
 ### have fun!
 
 
