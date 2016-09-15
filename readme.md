@@ -56,6 +56,9 @@ What the [upgrade](https://deis.com/docs/workflow/managing-workflow/upgrading-wo
 
 ### have fun!
 
+### To-Do
+
+Add an option to set off-cluster Postgres database (makes the Workflow upgarde evenmore slicker), which could be run in the same Kubernetes cluster, hosted at [compose.io](https://www.compose.com/postgresql) and etc.
 
 ## Contributing
 
