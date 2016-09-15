@@ -64,6 +64,9 @@ install() {
   fi
   ####
 
+  # set off-cluster Postgres
+  set_database
+
   # generate manifests
   echo " "
   echo "Generating Workflow ${WORKFLOW_RELEASE}-${K8S_NAME} manifests ..."
@@ -141,13 +144,17 @@ upgrade() {
   GCR_KEY_JSON=$(cat service_account_key.json)
   if [[ "$2" == "eu" ]]
   then
-    GCR_HOSTNAME="eu.gcr.io"
+    GCR_HOSTNAME=eu.gcr.io
   else
     GCR_HOSTNAME=""
   fi
-  #
+
+  # export values as environment variables
   export STORAGE_TYPE GCS_KEY_JSON GCS_REGISTRY_BUCKET GCS_DATABASE_BUCKET GCS_BUILDER_BUCKET DEIS_REGISTRY_LOCATION GCR_KEY_JSON GCR_HOSTNAME
   ####
+
+  # set off-cluster Postgres
+  set_database
 
   # Generate templates for the new release
   echo " "
@@ -183,6 +190,24 @@ upgrade() {
 
 }
 
+set_database() {
+if [[ ! -f postgres_settings ]]
+then
+  echo " "
+  echo "No postgres_settings file found !!! "
+  echo "PostgreSQL database will be set to on-cluster ..."
+else
+  echo " "
+  echo "postgres_settings file found !!!"
+  echo "PostgreSQL database will be set to off-cluster ..."
+  DATABASE_LOCATION="off-cluster"
+  # import values from file
+  source postgres_settings
+  # export values as environment variables
+  export DATABASE_LOCATION DATABASE_HOST DATABASE_PORT DATABASE_NAME DATABASE_USERNAME DATABASE_PASSWORD
+fi
+}
+
 cluster() {
   # get k8s cluster name
   echo " "
@@ -194,21 +219,21 @@ cluster() {
 
 install_deis() {
   # get lastest macOS deis cli version
-  echo "Downloading latest version of Workflow deis cli for macOS"
+  echo "Downloading latest version of Workflow deis cli ..."
   curl -o ~/bin/deis https://storage.googleapis.com/workflow-cli/deis-latest-darwin-amd64
   chmod +x ~/bin/deis
   echo " "
-  echo "Installed latest deis cli to ~/bin ..."
+  echo "Installed deis cli to ~/bin ..."
   echo " "
 }
 
 install_helmc() {
   # get lastest macOS helmc cli version
-  echo "Downloading latest version of helmc cli for macOS"
+  echo "Downloading latest version of helmc cli ..."
   curl -o ~/bin/helmc https://storage.googleapis.com/helm-classic/helmc-latest-darwin-amd64
   chmod +x ~/bin/helmc
   echo " "
-  echo "Installed latest helmc cli to ~/bin ..."
+  echo "Installed helmc cli to ~/bin ..."
   echo " "
 }
 
