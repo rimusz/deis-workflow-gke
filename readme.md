@@ -48,7 +48,7 @@ What the [upgrade](https://deis.com/docs/workflow/managing-workflow/upgrading-wo
 - Fetch latest Workflow chart
 - Fetch current database credentials
 - Fetch builder component ssh keys
-- Set storage to GCS
+- Set Storage to GCS
 - Set Registry to grc.io
 - Generate chart for the new release
 - Uninstall Workflow
