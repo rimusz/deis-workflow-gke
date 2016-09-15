@@ -23,13 +23,13 @@ Usage: install_workflow_2_gke.sh install [eu] | upgrade [eu] | deis | helmc | cl
 
 You will be able:
 
-- [install](https://deis.com/docs/workflow/installing-workflow/) : by defautl set Object Storage US region, use `eu` flag for EU region
-- [upgrade](https://deis.com/docs/workflow/managing-workflow/upgrading-workflow/) : upgrades to the latest Workflow version (use the same region as was for install)
+- install - by defautl sets Object Storage to US region, use `eu` flag for EU region
+- upgrade - upgrades to the latest Workflow version (use the same region as was for install)
 - deis - fetches the latest Workflow `deis` cli
 - helmc - fetches the latest [Helm Classic](https://github.com/helm/helm-classic) cli
 - cluster - shows cluster GKE name
 
-What the install will do:
+What the [install](https://deis.com/docs/workflow/installing-workflow/) will do:
 
 - Download lastest `helmc` cli version 
 - Download lastest `deis` cli version 
@@ -41,7 +41,7 @@ What the install will do:
 - Install Workflow
 - Show `deis-router` external IP
 
-What the upgrade will do:
+What the [upgrade](https://deis.com/docs/workflow/managing-workflow/upgrading-workflow/) will do:
 
 - Download lastest `helmc` cli version 
 - Download lastest `deis` cli version 
