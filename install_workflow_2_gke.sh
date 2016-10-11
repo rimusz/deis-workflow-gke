@@ -42,7 +42,7 @@ install() {
   GCS_DATABASE_BUCKET=${K8S_NAME}-deis-database
   GCS_BUILDER_BUCKET=${K8S_NAME}-deis-builder
   # set off-cluster registry
-  DEIS_REGISTRY_LOCATION=gcr
+  REGISTRY_LOCATION=gcr
   GCR_KEY_JSON=$(cat service_account_key.json)
   if [[ "$1" == "eu" ]]
   then
