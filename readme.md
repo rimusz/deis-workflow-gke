@@ -38,30 +38,30 @@ As Google Cloud Platform does not have hosted Postgres, you can use [compose.io]
 What the [install](https://deis.com/docs/workflow/installing-workflow/) will do:
 
 - Gets GKE cluster name which is used to create GCS buckets and Helm chart
-- Download lastest `helmc` cli version
-- Download lastest `deis` cli version
-- Add Deis Chart repository
-- Fetch latest Workflow chart
-- Set storage to GCS
-- Set Registry to grc.io
+- Downloads lastest `helmc` cli version
+- Downloads lastest `deis` cli version
+- Adds Deis Chart repository
+- Fetches latest Workflow chart
+- Sets storage to GCS
+- Sets Registry to grc.io
 - If `postgres_settings` file found sets PostgeSQL database to off-cluster 
-- Generate chart
-- Install Workflow
-- Show `deis-router` external IP
+- Generates chart
+- Installs Workflow
+- Shows `deis-router` external IP
 
 What the [upgrade](https://deis.com/docs/workflow/managing-workflow/upgrading-workflow/) will do:
 
-- Download lastest `helmc` cli version
-- Download lastest `deis` cli version
-- Fetch latest Workflow chart
-- Fetch current database credentials
-- Fetch builder component ssh keys
-- Set Storage to GCS
-- Set Registry to grc.io
+- Downloads lastest `helmc` cli version
+- Downloads lastest `deis` cli version
+- Fetches latest Workflow chart
+- Fetches current database credentials
+- Fetches builder component ssh keys
+- Sets Storage to GCS
+- Sets Registry to grc.io
 - If `postgres_settings` file found sets PostgeSQL database to off-cluster 
-- Generate chart for the new release
-- Uninstall old version Workflow
-- Install new version Workflow
+- Generates chart for the new release
+- Uninstalls old version Workflow
+- Installs new version Workflow
 
 ### have fun with Deis Workflow PaaS of deploying your 12 Factor Apps !!!
 
