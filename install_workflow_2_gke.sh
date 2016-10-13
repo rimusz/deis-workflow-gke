@@ -1,6 +1,18 @@
 #!/bin/bash
 
+check_service_account_key() {
+# check for check_service_account_key.json file
+if [[ ! -f service_account_key.json ]]
+then
+  echo " GCP 'service_account_key.json' file is missing!!!"
+  exit 0
+fi
+}
+
 install() {
+  # check for check_service_account_key.json file
+  check_service_account_key
+  
   # get k8s cluster name
   cluster
 
@@ -93,6 +105,9 @@ install() {
 }
 
 upgrade() {
+  # check for check_service_account_key.json file
+  check_service_account_key
+
   # get k8s cluster name
   cluster
 
