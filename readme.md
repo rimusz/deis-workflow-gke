@@ -13,7 +13,7 @@ Clone repository:
 $ git clone https://github.com/rimusz/deis-workflow-gke
 ```
 
-You need to get GCP [Service Account key](https://cloud.google.com/compute/docs/access/service-accounts) which has write access to GCS and GCR, so Workflow will be able to access GCS and GCR. Please name that file as `service_account_key.json`.
+**Note:** You need to get GCP [Service Account key](https://cloud.google.com/compute/docs/access/service-accounts) which has write access to GCS and GCR, so Workflow will be able to access them. Please name that file as `service_account_key.json`.
 
 
 How it works
